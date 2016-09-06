@@ -4,7 +4,11 @@ public class Order {
 	String customer;
 	String product;
 	int quantity;
-	static double taxRate = 0.05;
+    static double taxRate;
+	
+    static {
+        taxRate = 0.05;
+    }
 	
 	public Order(MyDate d, double amt, String c, String p, int q){
 		orderDate=d;
@@ -12,6 +16,10 @@ public class Order {
 		customer=c;
 		product=p;
 		quantity=q;
+	}
+
+	public Order(MyDate d, double amt, String c){
+        this(d, amt, c, "Anvil", 1);
 	}
 	
 	public static void setTaxRate(double newRate){
