@@ -1,3 +1,6 @@
+package com.acme.testing;
+import com.acme.domain.Order;
+import com.acme.util.MyDate;
 
 public class TestOrders {
 
