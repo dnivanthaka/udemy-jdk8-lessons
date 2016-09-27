@@ -24,6 +24,42 @@ public class Order {
 	public Order(MyDate d, double amt, String c){
         this(d, amt, c, "Anvil", 1);
 	}
+	/**
+	 * 
+	 * @return Jobsize for an order
+	 */
+	public char jobSize(){
+		char s = 'S';
+		
+		if(quantity > 25 && quantity <= 75){
+			s = 'M';
+		}else if(quantity > 75 && quantity <= 150){
+			s = 'L';
+		}else if(quantity > 150){
+			s = 'X';
+		}
+		
+		return s;
+	}
+	
+	public double computeTotal(){
+		double discount = 0.d;
+		char category = this.jobSize();
+		
+		switch(category){
+		case 'M':
+			discount = orderAmount * 0.01;
+		break;
+		case 'L':
+			discount = orderAmount * 0.02;
+		break;
+		case 'X':
+			discount = orderAmount * 0.03;
+		break;
+		default:
+		}
+		return orderAmount - discount + computeTax();
+	}
 	
 	public static void setTaxRate(double newRate){
 		taxRate = newRate;
