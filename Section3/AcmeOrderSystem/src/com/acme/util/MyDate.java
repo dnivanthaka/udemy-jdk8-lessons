@@ -1,9 +1,9 @@
 package com.acme.util;
 
 public class MyDate {
-	private int day;
-	private int month;
-	private int year;
+	private byte day;
+	private byte month;
+	private short year;
 	
 	{
 		day   = 1;
@@ -17,17 +17,17 @@ public class MyDate {
 	
 	public MyDate(int m, int d, int y){
 		if(isValid(m, d, y)){
-			month = m;
-			day   = d;
-			year  = y;
+			month = (byte)m;
+			day   = (byte)d;
+			year  = (short)y;
 		}
 	}
 	
 	public void setDate(int m, int d, int y){
 		if(isValid(m, d, y)){
-			month = m;
-			day   = d;
-			year  = y;
+			month = (byte)m;
+			day   = (byte)d;
+			year  = (short)y;
 		}
 	}
 	
@@ -69,7 +69,7 @@ public class MyDate {
 
 	public void setDay(int day) {
 		if(isValid(day, month, year)){		
-			this.day = day;
+			this.day = (byte)day;
 		}
 	}
 
@@ -78,7 +78,7 @@ public class MyDate {
 	}
 
 	public void setMonth(int month) {
-		this.month = month;
+		this.month = (byte)month;
 	}
 
 	public int getYear() {
@@ -86,6 +86,6 @@ public class MyDate {
 	}
 
 	public void setYear(int year) {
-		this.year = year;
+		this.year = (short)year;
 	}
 }
