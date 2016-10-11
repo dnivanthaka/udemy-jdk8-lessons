@@ -88,4 +88,15 @@ public class MyDate {
 	public void setYear(int year) {
 		this.year = (short)year;
 	}
+	
+	public boolean equals(Object o){
+		if(o instanceof MyDate){
+			MyDate d = (MyDate)o;
+			if((d.day == day) && (d.month == month) && (d.year == year)){
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
