@@ -36,6 +36,10 @@ public class TestOrders {
 		System.out.println("The total bill for: " + anvil + " is " + anvil.computeTotal());
 		System.out.println("The total bill for: " + balloons + " is " + balloons.computeTotal());
 
+		
+		System.out.println("The volume of the anvil is: "+anvil.getProduct().volume());
+		System.out.println("The length of the anvil is: "+((Solid) anvil.getProduct()).getLength());
+
 	}
 
 }
