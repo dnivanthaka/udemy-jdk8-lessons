@@ -5,6 +5,9 @@ import com.acme.domain.Good.UnitOfMeasureType;
 public class Liquid extends Good {
 	private double radius;
 
+	/*public void setName(){
+		
+	}*/
 	
 	public double getRadius() {
 		return radius;
