@@ -22,6 +22,8 @@ public class TestOrders {
 		Solid s2 = new Solid("Acme Balloon", 1401, 15,
 				UnitOfMeasureType.CUBIC_FEET, false, 10, 5, 5);
 		Order balloons = new Order(date2, 1000.00, "Bugs Bunny", s2, 125);
+		
+		Order.setRushable( (orderDate, orderAmount)-> orderAmount > 1500 );
 
 		System.out.println(anvil);
 		System.out.println(balloons);
