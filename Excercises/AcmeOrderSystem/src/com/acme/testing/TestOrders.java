@@ -1,5 +1,8 @@
 package com.acme.testing;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 import com.acme.domain.Good.UnitOfMeasureType;
 import com.acme.domain.Order;
 import com.acme.domain.Solid;
@@ -49,6 +52,15 @@ public class TestOrders {
 		System.out.println("The total bill for: " + birdEradication + "is "
 		+ birdEradication.computeTotal());
 
+		
+		LocalDate today = LocalDate.now();
+		LocalDate orderDate = LocalDate.of(date3.getYear(), date3.getDay(), date3.getMonth());
+		
+		System.out.println(today);
+		System.out.println(orderDate);
+		
+		Period p = Period.between(orderDate, today);
+		System.out.println(p.getYears());
 		
 	}
 
