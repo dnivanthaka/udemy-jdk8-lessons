@@ -24,7 +24,7 @@ public class MyDate {
 	}
 	
 	public void setDate(int m, int d, int y){
-		if(isValid(m, d, y)){
+		if(isValid(d, m, y)){
 			month = (byte)m;
 			day   = (byte)d;
 			year  = (short)y;
@@ -49,7 +49,7 @@ public class MyDate {
 	
 	private boolean isValid(int date, int month, int year){
 		if(month > 12 || month < 1 || date > 31 || date < 1){
-			System.out.println("Attempted to create an invalid date.");
+			System.out.println("Attempted to create an invalid date. d-m-y "+date+"-"+month+"-"+year);
 			return false;
 		}
 		switch(month){
