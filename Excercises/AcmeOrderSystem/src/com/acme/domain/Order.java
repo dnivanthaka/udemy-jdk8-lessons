@@ -15,6 +15,7 @@ public class Order {
     }
 	
 	public Order(MyDate d, double amt, String c, Product p, int q){
+		setOrderDate(d);
 		orderDate=d;
 		orderAmount=amt;
 		customer=c;
@@ -85,7 +86,11 @@ public class Order {
 	}
 
 	public void setOrderDate(MyDate orderDate) {
-		this.orderDate = orderDate;
+		if(isHoliday(orderDate)){
+			System.out.println("Order date, " + orderDate + ", cannot be set to a holiday!");
+		}else{
+			this.orderDate = orderDate;
+		}
 	}
 
 	public double getOrderAmount() {
@@ -146,5 +151,17 @@ public class Order {
 		}
 		
 		return priorityOrder;
+	}
+	
+	public boolean isHoliday(MyDate proposedDate){
+		boolean result = false;
+		
+		for(MyDate holiday : MyDate.getHolidays()){
+			if(holiday.equals(proposedDate)){
+				result = true;
+			}
+		}
+		
+		return result;
 	}
 }

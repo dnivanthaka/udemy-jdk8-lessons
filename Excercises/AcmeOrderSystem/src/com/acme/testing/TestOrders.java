@@ -69,6 +69,9 @@ public class TestOrders {
 
 		System.out.println("Anvil isPriorityOrder: " + anvil.isPriorityOrder());
 		System.out.println("Hammer isPriorityOrder: " + hammer.isPriorityOrder());
+		
+		MyDate date5 = new MyDate(1,1,2016);
+		Order hammer2 = new Order(date5, 10.00, "Wile E Coyote", hammerType, 10);
 
 	}
 

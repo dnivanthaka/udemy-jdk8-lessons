@@ -31,6 +31,9 @@ public class TestMyDate{
 		
 		//MyDate.leapYears();
 
+		MyDate.listHolidays();
+		MyDate date5 = new MyDate(1,1,2016);
+
 
 	}
 }

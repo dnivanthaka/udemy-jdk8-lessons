@@ -4,8 +4,22 @@ public class MyDate {
 	private byte day;
 	private byte month;
 	private short year;
+	private static MyDate[] holidays;
+	
+	static{
+		System.out.println("In static block");
+		
+		holidays = new MyDate[6];
+		holidays[0] = new MyDate(1, 1, 2016);
+		holidays[1] = new MyDate(9, 5, 2016);
+		holidays[2] = new MyDate(5, 30, 2016);
+		holidays[3] = new MyDate(11, 24, 2016);
+		holidays[4] = new MyDate(7, 4, 2016);
+		holidays[5] = new MyDate(12, 25, 2016);
+	}
 	
 	{
+		System.out.println("In init block");
 		day   = 1;
 		month = 1;
 		year  = 2000;
@@ -20,6 +34,18 @@ public class MyDate {
 			month = (byte)m;
 			day   = (byte)d;
 			year  = (short)y;
+		}
+	}
+	
+	public static MyDate[] getHolidays(){
+		return holidays;
+	}
+	
+	public static void listHolidays(){
+		System.out.println("The holidays are:");
+		for(int x=0;x<holidays.length;x++){
+			System.out.println(holidays[x]);
+			
 		}
 	}
 	
