@@ -11,4 +11,15 @@ public class ConversionService {
 	public static float literToGallon     = 0.2642f;
 	public static float	literToPints      = 2.1134f;
 	public static short literToMilliliters = 1_000;
+	
+	public static double[][] allKgToPounds(double... kilogramValues){
+		double [][] result = new double[kilogramValues.length][kilogramValues.length];
+		
+		for(int i=0;i<kilogramValues.length;i++){
+			result[i][0] = kilogramValues[i];
+			result[i][1] = kilogramValues[i] * kilogramToPounds;
+		}
+		
+		return result;
+	}
 }
