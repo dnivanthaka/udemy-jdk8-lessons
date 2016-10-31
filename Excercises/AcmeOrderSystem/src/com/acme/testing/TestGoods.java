@@ -1,5 +1,7 @@
 package com.acme.testing;
 
+import java.util.Collections;
+
 import com.acme.domain.Good;
 import com.acme.domain.Liquid;
 import com.acme.domain.Solid;
@@ -41,6 +43,13 @@ public class TestGoods {
 		System.out.println(Good.getCatalog());
 		
 		System.out.println("Flammable products:"+Good.flammablesList());
+		
+		Collections.sort(Good.getCatalog());
+		System.out.println(Good.getCatalog());
+		
+		Good test = new Liquid("Acme Glue", 2334, 4, UnitOfMeasureType.LITER, false, 15, 6);
 
+		int pos = Collections.binarySearch(Good.getCatalog(), test);
+		System.out.println(pos);
 	}
 }
